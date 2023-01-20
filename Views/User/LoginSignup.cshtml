@@ -1,0 +1,77 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+<title>User</title>
+
+<div class="text-center">
+    <button class="btn btn-outline-primary m-2" id="login" onclick="func1()">Sign In</button>
+    <button class="btn btn-outline-primary" id="signup" onclick="func2()">Sign Up</button>
+</div>
+<script>
+    function func1(){
+        var divLogin = document.getElementById("tab-login");
+        var divSignup = document.getElementById("tab-signup");
+        divSignup.style.display = "none";
+        divLogin.style.display = "block";    
+    }
+
+    function func2() {
+        var divLogin = document.getElementById("tab-login");
+        var divSignup = document.getElementById("tab-signup");
+        divLogin.style.display = "none";
+        divSignup.style.display = "block";   
+    }
+</script>
+<!-- Tabs -->
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="tab-login" role="tabpanel" aria-labelledby="tab-login">
+        <form method="post" action="/User/Signin" class="text-center">
+            <p class="text-primary" style="font-size: 20px">Sign In</p>
+                
+            <!-- Email Input -->
+            <div class="form-outline mb-4">
+                <input name="email" placeholder="E-Mail" class="form-control" type="email" />
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-outline mb-4">
+                <input name="password" placeholder="Password" class="form-control" id="loginPassword" type="password" />
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+           
+            <!-- Register buttons -->    
+            <p>Not a member?</p><button class="btn btn-outline-primary" id="signup" onclick="func2()">Sign Up</button>
+            
+        </form>
+    </div>
+
+    <div class="tab-pane" id="tab-signup" role="tabpanel" aria-labelledby="tab-signup">
+        <form method="post" action="/User/SignUp" class="text-center">
+            <p class="text-primary" style="font-size: 20px">Sign Up</p>
+            
+            <div class="form-outline mb-4">
+                <input name="name" placeholder="User Name" type="text" class="form-control" />
+            </div>
+
+            <div class="form-outline mb-4">
+                <input name="email" placeholder="Email" type="email" class="form-control" />
+            </div>
+
+            <div class="form-outline mb-4">
+                <input name="password" placeholder="Password" type="password" class="form-control" />
+            </div>
+
+            <div class="form-outline mb-4">
+                <input name="confirmPassword" placeholder="Confirm Password" type="password" class="form-control" />
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-3">Sign Up</button>
+        </form>
+    </div>
+</div>
+}

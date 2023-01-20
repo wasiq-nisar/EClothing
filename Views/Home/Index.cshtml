@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script>
+    function loaderFunction(){
+        setTimeout(() => {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("dashboard").style.display = "block"
+        },2000);
+    }
+</script>
+
+<body onload="loaderFunction()">
+    <div id="preloader">
+        <div class="text-center" style="margin-top: 25%">
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-danger"></div>
+        </div>
+    </div>
+
+    <div style="display: none" id="dashboard">
+        <h1 class="toast-header">Dashboard</h1>
+        
+        <div class="card" style="width: 18rem">
+            <img src="images/product/product_list_1.png" />
+            <div class="card-body">
+                <h5 class="card-title">Pillow</h5>
+                <p class="card-text">This is a comfortable pillow.</p>
+            </div>
+        </div>
+    
+    </div>
+
+    
+</body>
